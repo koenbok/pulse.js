@@ -319,6 +319,7 @@
   }
 
   // src/client.ts
+  console.log("test");
   window["Pulse"] = (scope, source) => {
     return new Pulse(scope, source, `https://beat.dev/${scope}`);
   };

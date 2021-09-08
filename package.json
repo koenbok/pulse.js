@@ -5,7 +5,8 @@
     "init": "[ -d node_modules ] || yarn",
     "serve": "parcel ./index.html",
     "build": "yarn; esbuild ./src/client.ts --bundle --outfile=./build/index.js; esbuild ./src/client.ts --bundle --minify --outfile=./build/index.min.js",
-    "deploy": "yarn build; netlify deploy --prod",
+    "upload": "netlify deploy --prod",
+    "deploy": "yarn build; git commit -m 'deploy' build; git push",
     "test": "yarn run init; jest --watchAll"
   },
   "jest": {

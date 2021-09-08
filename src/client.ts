@@ -1,7 +1,11 @@
 import { Pulse } from "./index";
 
-console.log("test")
+if (window) {
+  window["Pulse"] = (scope: string, source: string) => {
+    return new Pulse(scope, source, `https://beat.dev/${scope}`);
+  };
+}
 
-window["Pulse"] = (scope: string, source: string) => {
-  return new Pulse(scope, source, `https://beat.dev/${scope}`);
-};
+export { Pulse }
+
+
